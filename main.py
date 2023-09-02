@@ -36,6 +36,7 @@ def main():
                     message = r.recognize_google(audio)
                     message = message.lower()
                     message = ("Talk like a human and give me the simplest answers only, " + message)
+                    print("hello")
                     #make led go red
                     system("say Please wait while i look through my database")
                     if message:
