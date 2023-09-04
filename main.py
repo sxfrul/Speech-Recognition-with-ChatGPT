@@ -2,7 +2,7 @@ import speech_recognition as sr
 from os import system
 import openai
 
-openai.api_key = ('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')
+openai.api_key = ('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')
 messages = [ {"role": "system", "content": 
               "You are a intelligent assistant."} ]
    
@@ -35,7 +35,7 @@ def main():
                 try:
                     message = r.recognize_google(audio)
                     message = message.lower()
-                    message = ("Talk like a human and give me the simplest answers only, {message}")
+                    message = ("Talk like a human and give me the simplest answers only, "+ message)
                     #make led go red
                     system("say Please wait while i look through my database")
                     if message:
@@ -52,6 +52,7 @@ def main():
                     system('say "{}"'. format(reply))
                     messages.append({"role": "assistant", "content": reply})
                     takingInput = False
+                    print(message)
                 except:
                     print("no commands given.")
                     takingInput=False
